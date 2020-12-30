@@ -1,0 +1,4 @@
+.vagrant
+.ssh
+.cache
+/target2/home/.bash_history

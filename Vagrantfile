@@ -1,23 +1,22 @@
 
 $ctlscript = <<CTLSCRIPT
-sudo yum update -y
-sudo yum install nano -y
-sudo yum install epel-release -y
-sudo yum install ansible -y
-sudo cp /home/vagrant/hostname /etc/hostname
-sudo cp /home/vagrant/hosts /etc/hosts
+sudo apt update -y
+sudo apt install nano -y
+sudo apt install ansible -y
+#sudo cp /home/vagrant/hostname /etc/hostname
+#sudo cp /home/vagrant/hosts /etc/hosts
 CTLSCRIPT
 
 $targetscript = <<TARGETSCRIPT
-sudo yum update -y
-sudo yum install nano -y
-sudo cp /home/vagrant/hostname /etc/hostname
-sudo cp /home/vagrant/hosts /etc/hosts
+sudo apt update -y
+sudo apt install nano -y
+#sudo cp /home/vagrant/hostname /etc/hostname
+#sudo cp /home/vagrant/hosts /etc/hosts
 TARGETSCRIPT
 
 Vagrant.configure("2") do |config|
  
-  config.vm.box = "bento/centos-7"
+  config.vm.box = "ubuntu/trusty64"
 
   config.vm.define "ansiblecontroller" do |ansiblecontroller|
   ansiblecontroller.vm.network "private_network", ip: "192.168.10.2"
