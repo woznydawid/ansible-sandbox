@@ -1,0 +1,5 @@
+/.vagrant
+*.bash_history
+/target1/home/*.bash_history
+/target2/home/*.bash_history
+/ansiblecontroller/home/.ssh
